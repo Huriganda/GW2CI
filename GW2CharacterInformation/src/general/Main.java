@@ -42,7 +42,6 @@ public class Main extends JFrame {
 	static JLabel lbl_KlasseIcon = new JLabel("");
 	static JTextPane textPane = new JTextPane();
 	static JTextPane tP_ItemInfo = new JTextPane();
-	static JProgressBar progressBar = new JProgressBar();
 
 	// Icons für die einzelnen Items
 	static JLabel lbl_KopfIcon = new JLabel(" ");
@@ -394,11 +393,6 @@ public class Main extends JFrame {
 		tP_ItemInfo.setEditable(false);
 		tP_ItemInfo.setBounds(219, 418, 362, 442);
 		contentPane.add(tP_ItemInfo);
-		
-		
-		progressBar.setStringPainted(true);
-		progressBar.setBounds(219, 886, 362, 14);
-		contentPane.add(progressBar);
 		
 		Connection conn = new Connection();
 		
