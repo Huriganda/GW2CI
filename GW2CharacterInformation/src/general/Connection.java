@@ -96,7 +96,6 @@ public class Connection {
 		for (int i = 0; i < chars.length; i++) {
 			chars[i] = chars[i].substring(1);
 			chars[i] = chars[i].substring(0, chars[i].length() - 1);
-
 			general.Main.cB_CharNames.addItem(chars[i]);
 		}
 
@@ -112,206 +111,141 @@ public class Connection {
 		BufferedReader br = new BufferedReader(new InputStreamReader(
 				inputStream, Charset.forName("UTF-8")));
 		Object jsonText = parser.parse(br);
-
 		jsonObject = (JSONObject) jsonText;
 		getCharacterInformation();
 		getEquipment();
 
 		if (!(array[0][0] == null)) {
-			
 			helmAquatic.getBasicContent(array[0][0]);
 		} else {
 			Main.lbl_AtemmaskeIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(4);
-		Main.contentPane.updateUI();
 
 		if (!(array[1][0] == null)) {
-			
 			backpack.getBasicContent(array[1][0]);
 		} else {
 			Main.lbl_RueckenIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(9);
-		Main.contentPane.updateUI();
 
 		if (!(array[2][0] == null)) {
-			
 			coat.getBasicContent(array[2][0]);
 		} else {
 			Main.lbl_BrustIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(13);
-		Main.contentPane.updateUI();
 		
 		if (!(array[3][0] == null)) {
-			
 			boots.getBasicContent(array[3][0]);
 		} else {
 			Main.lbl_SchuhIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(18);
 
 		if (!(array[4][0] == null)) {
-			
 			gloves.getBasicContent(array[4][0]);
 		} else {
 			Main.lbl_HandschuhIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(22);
 
 		if (!(array[5][0] == null)) {
-			
 			helmet.getBasicContent(array[5][0]);
-
 		} else {
 			Main.lbl_KopfIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(27);
 
 		if (!(array[6][0] == null)) {
-			
 			leggins.getBasicContent(array[6][0]);
-
 		} else {
 			Main.lbl_HoseIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(31);
 
 		if (!(array[7][0] == null)) {
-			
 			shoulders.getBasicContent(array[7][0]);
-
 		} else {
 			Main.lbl_SchulterIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(36);
 
 		if (!(array[8][0] == null)) {
-			
 			accessory1.getBasicContent(array[8][0]);
-
 		} else {
 			Main.lbl_Ohrring1Icon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(40);
 
 		if (!(array[9][0] == null)) {
-			
 			accessory2.getBasicContent(array[9][0]);
-
 		} else {
 			Main.lbl_Ohrring2Icon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(45);
 
 		if (!(array[10][0] == null)) {
-			
 			ring1.getBasicContent(array[10][0]);
-
 		} else {
 			Main.lbl_Ring1Icon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(49);
 
 		if (!(array[11][0] == null)) {
-			
 			ring2.getBasicContent(array[11][0]);
-
 		} else {
 			Main.lbl_Ring2Icon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(54);
 
 		if (!(array[12][0] == null)) {
-			
 			amulet.getBasicContent(array[12][0]);
-
 		} else {
 			Main.lbl_AmulettIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(58);
 
 		if (!(array[13][0] == null)) {
-			
 			weaponAquaticA.getBasicContent(array[13][0]);
-
 		} else {
 			Main.lbl_Unterwasserwaffe1Icon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(63);
 
 		if (!(array[14][0] == null)) {
-			
 			weaponAquaticB.getBasicContent(array[14][0]);
-
 		} else {
 			Main.lbl_Unterwasserwaffe2Icon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(67);
 
 		if (!(array[15][0] == null)) {
-			
 			waffe1a.getBasicContent(array[15][0]);
-
 		} else {
 			Main.lbl_Waffe1AIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(72);
 
 		if (!(array[16][0] == null)) {
-			
 			waffe2a.getBasicContent(array[16][0]);
-
 		} else {
 			Main.lbl_Waffe2AIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(76);
 
 		if (!(array[17][0] == null)) {
-			
 			weapon1b.getBasicContent(array[17][0]);
-
 		} else {
 			Main.lbl_Waffe1BIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(81);
 
 		if (!(array[18][0] == null)) {
-			
 			weapon2b.getBasicContent(array[18][0]);
-
 		} else {
 			Main.lbl_Waffe2BIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(85);
 
 		if (!(array[19][0] == null)) {
-			
 			sickle.getBasicContent(array[19][0]);
-
 		} else {
 			Main.lbl_ErntesichelIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(90);
 
 		if (!(array[20][0] == null)) {
-			
 			axe.getBasicContent(array[20][0]);
-
 		} else {
 			Main.lbl_HolzaxtIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(95);
 
 		if (!(array[21][0] == null)) {
-			
 			pick.getBasicContent(array[21][0]);
-
 		} else {
 			Main.lbl_SpitzhackeIcon.setIcon(nothingIcon);
 		}
-		Main.progressBar.setValue(100);
 
 		br.close();
 		inputStream.close();

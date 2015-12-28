@@ -45,8 +45,6 @@ public abstract class Items {
 				+ "\nTyp: " + type + "\nLevel: " + level + "\nRarität: "
 				+ rarity + "\nWert: " + value + "\nChat Link: " + chat_link;
 		Main.tP_ItemInfo.setText(AllTogether);
-		System.out.println("Yaaaaay");
-
 	}
 
 	public static void icon(JSONObject jsonObject) {
