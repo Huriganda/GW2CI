@@ -19,6 +19,7 @@ public abstract class Items {
 	static String icon;
 	static JSONParser parser = new JSONParser();
 	static String URL;
+	static long id;
 	// static InputStream inputStream;
 	// static BufferedReader br;
 	static Object jsonText;
@@ -40,10 +41,12 @@ public abstract class Items {
 		vendor_value = (long) jsonObject.get("vendor_value");
 		String value = Connection.coins(vendor_value);
 		chat_link = (String) jsonObject.get("chat_link");
+		id = (long) jsonObject.get("id");
+		String idString = String.valueOf(id); 
 
 		String AllTogether = "Name: " + name + "\nBeschreibung: " + description
 				+ "\nTyp: " + type + "\nLevel: " + level + "\nRarität: "
-				+ rarity + "\nWert: " + value + "\nChat Link: " + chat_link;
+				+ rarity + "\nWert: " + value + "\nChat Link: " + chat_link + "\nID: " + idString;
 		Main.tP_ItemInfo.setText(AllTogether);
 	}
 
