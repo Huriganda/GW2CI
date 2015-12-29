@@ -72,7 +72,6 @@ public class Helmet extends Items{
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
 				Items.write((JSONObject) getJsonText());
-				//Main.tP_ItemInfo.setText("Name: " + name + "\nBeschreibung: " + description + "\nTyp: " + type + "\nLevel: " + level);
 			}
 		});
 	}

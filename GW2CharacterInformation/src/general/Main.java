@@ -377,11 +377,13 @@ public class Main extends JFrame {
 		lblUnterwasserwaffe.setBounds(621, 898, 150, 20);
 		contentPane.add(lblUnterwasserwaffe);
 
-		lbl_KlasseIcon.setBounds(368, 76, 128, 128);
+		lbl_KlasseIcon.setBounds(453, 76, 128, 128);
 		contentPane.add(lbl_KlasseIcon);
 		textPane.setEditable(false);
 
 		textPane.setBounds(219, 220, 362, 160);
+		textPane.setBorder(BorderFactory.createLineBorder(Color.black,
+				1));
 		contentPane.add(textPane);
 
 		lbl_HoseIcon.setBounds(112, 396, 64, 64);
@@ -392,6 +394,8 @@ public class Main extends JFrame {
 		
 		tP_ItemInfo.setEditable(false);
 		tP_ItemInfo.setBounds(219, 418, 362, 442);
+		tP_ItemInfo.setBorder(BorderFactory.createLineBorder(Color.black,
+				1));
 		contentPane.add(tP_ItemInfo);
 		
 		Connection conn = new Connection();
