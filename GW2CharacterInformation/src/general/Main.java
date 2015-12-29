@@ -399,46 +399,6 @@ public class Main extends JFrame {
 		contentPane.add(tP_ItemInfo);
 		
 		Connection conn = new Connection();
-		
-		
-		/*lbl_KlasseIcon.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				try {
-					waffe1a.getBasicContent(30704);
-					helmet.getBasicContent(48201);
-				} catch (IOException | ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}
-		});*/
 
 		btnAbsenden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
