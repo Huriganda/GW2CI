@@ -70,25 +70,20 @@ public class Connection {
 	public static JSONObject jsonObject;
 	public static String array[][] = new String[22][6];
 	private boolean alreadyIn = false;
-	static ImageIcon WaechterIcon = new ImageIcon(
-			Main.class.getResource("/images/Guardian_icon.png"));
+	static ImageIcon WaechterIcon = new ImageIcon(Main.class.getResource("/images/Guardian_icon.png"));
 	static ImageIcon nothingIcon = new ImageIcon(Main.class.getResource("/images/nothing.png"));
 
-	public void getCharNames(String APIAccesToken)
-			throws MalformedURLException, IOException, ParseException {
+	public void getCharNames(String APIAccesToken) throws MalformedURLException, IOException, ParseException {
 		setAlreadyIn(true);
 		JSONParser parser = new JSONParser();
-		String URL = "https://api.guildwars2.com/v2/characters?access_token="
-				+ APIAccesToken;
+		String URL = "https://api.guildwars2.com/v2/characters?access_token=" + APIAccesToken;
 		InputStream inputStream = new URL(URL).openStream();
-		BufferedReader br = new BufferedReader(new InputStreamReader(
-				inputStream, Charset.forName("UTF-8")));
+		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
 		Object jsonText = parser.parse(br);
 
 		jsonText = jsonText.toString();
 		String withoutbrackets = ((String) jsonText).substring(1);
-		withoutbrackets = withoutbrackets.substring(0,
-				withoutbrackets.length() - 1);
+		withoutbrackets = withoutbrackets.substring(0, withoutbrackets.length() - 1);
 		String[] chars = withoutbrackets.split(",");
 
 		// jsonObject = (JSONObject) jsonText;
@@ -103,15 +98,14 @@ public class Connection {
 
 	}
 
-	public static void getConnection(String name) throws MalformedURLException,
-			IOException, ParseException, InterruptedException {
+	public static void getConnection(String name)
+			throws MalformedURLException, IOException, ParseException, InterruptedException {
 		name = name.replace(" ", "%20");
 		JSONParser parser = new JSONParser();
-		String URL = "https://api.guildwars2.com/v2/characters/" + name
-				+ "?access_token=" + Main.tF_APIToken.getText().toString();
+		String URL = "https://api.guildwars2.com/v2/characters/" + name + "?access_token="
+				+ Main.tF_APIToken.getText().toString();
 		InputStream inputStream = new URL(URL).openStream();
-		BufferedReader br = new BufferedReader(new InputStreamReader(
-				inputStream, Charset.forName("UTF-8")));
+		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
 		Object jsonText = parser.parse(br);
 		jsonObject = (JSONObject) jsonText;
 		getCharacterInformation();
@@ -134,7 +128,7 @@ public class Connection {
 		} else {
 			Main.lbl_BrustIcon.setIcon(nothingIcon);
 		}
-		
+
 		if (!(array[3][0] == null)) {
 			boots.getBasicContent(array[3][0]);
 		} else {
@@ -268,40 +262,31 @@ public class Connection {
 		String profession = (String) jsonObject.get("profession");
 		if (profession.equals("Guardian")) {
 			profession = "Wächter";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Guardian_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Guardian_icon.png")));
 		} else if (profession.equals("Warrior")) {
 			profession = "Krieger";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Warrior_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Warrior_icon.png")));
 		} else if (profession.equals("Engineer")) {
 			profession = "Ingenieur";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Engineer_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Engineer_icon.png")));
 		} else if (profession.equals("Ranger")) {
 			profession = "Waldläufer";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Ranger_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Ranger_icon.png")));
 		} else if (profession.equals("Thief")) {
 			profession = "Dieb";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Thief_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Thief_icon.png")));
 		} else if (profession.equals("Elementalist")) {
 			profession = "Elementarmagier";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Elementalist_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Elementalist_icon.png")));
 		} else if (profession.equals("Necromancer")) {
 			profession = "Nekromant";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Necromancer_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Necromancer_icon.png")));
 		} else if (profession.equalsIgnoreCase("Revenant")) {
 			profession = "Widergänger";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Revenant_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Revenant_icon.png")));
 		} else if (profession.equalsIgnoreCase("Mesmer")) {
 			profession = "Mesmer";
-			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class
-					.getResource("/images/Mesmer_icon.png")));
+			Main.lbl_KlasseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/Mesmer_icon.png")));
 		}
 		long level = (long) jsonObject.get("level");
 		String levelString = String.valueOf(level);
@@ -314,11 +299,9 @@ public class Connection {
 		long deaths = (long) jsonObject.get("deaths");
 		String deathsString = String.valueOf(deaths);
 
-		Main.textPane.setText("Name: " + charname + "\nRasse: " + race
-				+ "\nGeschlecht: " + gender + "\nKlasse: " + profession
-				+ "\nLevel: " + levelString + "\nGilde: " + guild + "\nAlter: "
-				+ ageString + "\nErstellt: " + created + "\nTode: "
-				+ deathsString);
+		Main.textPane.setText("Name: " + charname + "\nRasse: " + race + "\nGeschlecht: " + gender + "\nKlasse: "
+				+ profession + "\nLevel: " + levelString + "\nGilde: " + guild + "\nAlter: " + ageString
+				+ "\nErstellt: " + created + "\nTode: " + deathsString);
 
 		/*
 		 * String ar[] = new String[9]; ar[0] = charname; ar[1] = race; ar[2] =
@@ -453,47 +436,85 @@ public class Connection {
 		}
 		return array;
 	}
-	
-	public static void getWallet(String apitoken) throws MalformedURLException, IOException, ParseException{
+
+	public static void getWallet(String apitoken) throws MalformedURLException, IOException, ParseException {
 		JSONParser parser = new JSONParser();
 		String URL = "https://api.guildwars2.com/v2/account/wallet?access_token=" + apitoken;
 		InputStream inputStream = new URL(URL).openStream();
-		BufferedReader br = new BufferedReader(new InputStreamReader(
-				inputStream, Charset.forName("UTF-8")));
+		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
 		Object jsonText = parser.parse(br);
 		JSONArray jsonarray = (JSONArray) jsonText;
-		String[] walletarray = new String[jsonarray.size()];
+		String[] walletarray = new String[jsonarray.size() + jsonarray.size()];
 		String idchain = null;
-		for (int i = 0; i < walletarray.length; i++){
+		for (int i = 0; i < walletarray.length / 2; i++) {
 			JSONObject index = (JSONObject) jsonarray.get(i);
 			long id = (long) index.get("id");
 			walletarray[i] = String.valueOf(id);
 			long value = (long) index.get("value");
-			System.out.println(id + ": " + value);
+			walletarray[i + jsonarray.size()] = String.valueOf(value);
+			// System.out.println(id + ": " + value);
 			idchain = idchain + String.valueOf(id) + ",";
 		}
+
+		/*
+		 * for (int i = 0; i < walletarray.length/2; i++){
+		 * System.out.println(walletarray[i] + walletarray[i+jsonarray.size()]);
+		 * }
+		 */
+
 		idchain = idchain.substring(4);
-		idchain = idchain.substring(0, idchain.length()-1);
-		String CurrencieURL = "https://api.guildwars2.com/v2/currencies?ids=" + idchain;
+		idchain = idchain.substring(0, idchain.length() - 1);
+		String CurrencieURL = "https://api.guildwars2.com/v2/currencies?ids=" + idchain + "&lang=de";
 		InputStream iSCurrency = new URL(CurrencieURL).openStream();
 		BufferedReader bRCurrency = new BufferedReader(new InputStreamReader(iSCurrency, Charset.forName("UTF-8")));
 		Object jTCurrency = parser.parse(bRCurrency);
 		JSONArray arrayCurrency = (JSONArray) jTCurrency;
+		String[] currencyResult = new String[arrayCurrency.size()];
+		for (int i = 0; i < currencyResult.length; i++) {
+			JSONObject index = (JSONObject) arrayCurrency.get(i);
+			long id = (long) index.get("id");
+			currencyResult[i] = String.valueOf(id);
+			System.out.println(currencyResult[i]);
+		}
+		int arrayindex = 0;
+		int array2index = 0;
+
+		while (!(currencyResult[arrayindex]).equals(walletarray[array2index].length() / 2)&& !(array2index >= walletarray.length/2)) {
+			if (currencyResult[arrayindex].equals(walletarray[array2index])) {
+				JSONObject index = (JSONObject) arrayCurrency.get(arrayindex);
+				String name = (String) index.get("name");
+				System.out.println(name + ": " + walletarray[array2index + jsonarray.size()]);
+				wallet.listModel.addElement(name + ": " + walletarray[array2index + jsonarray.size()]);
+				array2index++;
+			} else {
+				if (!(arrayindex >= currencyResult.length-1)) {
+					arrayindex++;
+				} else {
+					arrayindex = 0;
+				}
+			}
+		}
+		wallet.list.setModel(wallet.listModel);
+
+		/*
+		 * for (int i = 0; i < currencyResult.length; i++){ if
+		 * (walletarray[i].equals(anObject)) }
+		 */
 		System.out.println(CurrencieURL);
-		//System.out.println(jsonarray);
+		// System.out.println(jsonarray);
 	}
 
 	public static String age(long age) {
 		double realage = age /= 60;
-		double hours = realage/60;
+		double hours = realage / 60;
 		DecimalFormat df = new DecimalFormat();
 		df.setRoundingMode(RoundingMode.DOWN);
 		String roundedhours = df.format(hours);
 		String ageString = realage + " Minuten = " + roundedhours + " Stunden";
 		return ageString;
 	}
-	
-	public static String created(String created){
+
+	public static String created(String created) {
 		String year = created.substring(0, 4);
 		String month = created.substring(5, 7);
 		String day = created.substring(8, 10);
@@ -501,15 +522,15 @@ public class Connection {
 		created = day + "." + month + "." + year + ", um " + time + " Uhr";
 		return created;
 	}
-	
-	public static String coins(long vendor_value){
+
+	public static String coins(long vendor_value) {
 		int kupfer = (int) (vendor_value % 100);
 		vendor_value /= 100;
 		int silber = (int) vendor_value % 100;
 		vendor_value /= 100;
 		int gold = (int) vendor_value % 100;
 		String value = gold + " Gold, " + silber + " Silber, " + kupfer + " Kupfer";
-		return value;		
+		return value;
 	}
 
 	public void getItemData(int id) {

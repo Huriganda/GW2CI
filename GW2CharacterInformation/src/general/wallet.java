@@ -1,10 +1,11 @@
 package general;
 
-import java.awt.BorderLayout;
 import java.awt.Toolkit;
 import java.io.IOException;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -17,6 +18,8 @@ public class wallet extends JFrame {
 	 */
 	private static final long serialVersionUID = 5024777681131116744L;
 	private JPanel contentPane;
+	static JList list = new JList();
+	static DefaultListModel listModel = new DefaultListModel();
 
 	/**
 	 * Launch the application.
@@ -47,6 +50,11 @@ public class wallet extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		
+		
+		list.setBounds(10, 11, 223, 469);
+		contentPane.add(list);
 		try {
 			Connection.getWallet(Main.tF_APIToken.getText().toString());
 		} catch (IOException | ParseException e) {
@@ -54,5 +62,4 @@ public class wallet extends JFrame {
 			e.printStackTrace();
 		}
 	}
-
 }
