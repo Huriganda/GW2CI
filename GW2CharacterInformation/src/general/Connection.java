@@ -4,9 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.RoundingMode;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.text.DecimalFormat;
 
 import javax.swing.ImageIcon;
 
@@ -451,11 +453,43 @@ public class Connection {
 		}
 		return array;
 	}
+	
+	public static void getWallet(String apitoken) throws MalformedURLException, IOException, ParseException{
+		JSONParser parser = new JSONParser();
+		String URL = "https://api.guildwars2.com/v2/account/wallet?access_token=" + apitoken;
+		InputStream inputStream = new URL(URL).openStream();
+		BufferedReader br = new BufferedReader(new InputStreamReader(
+				inputStream, Charset.forName("UTF-8")));
+		Object jsonText = parser.parse(br);
+		JSONArray jsonarray = (JSONArray) jsonText;
+		String[] walletarray = new String[jsonarray.size()];
+		String idchain = null;
+		for (int i = 0; i < walletarray.length; i++){
+			JSONObject index = (JSONObject) jsonarray.get(i);
+			long id = (long) index.get("id");
+			walletarray[i] = String.valueOf(id);
+			long value = (long) index.get("value");
+			System.out.println(id + ": " + value);
+			idchain = idchain + String.valueOf(id) + ",";
+		}
+		idchain = idchain.substring(4);
+		idchain = idchain.substring(0, idchain.length()-1);
+		String CurrencieURL = "https://api.guildwars2.com/v2/currencies?ids=" + idchain;
+		InputStream iSCurrency = new URL(CurrencieURL).openStream();
+		BufferedReader bRCurrency = new BufferedReader(new InputStreamReader(iSCurrency, Charset.forName("UTF-8")));
+		Object jTCurrency = parser.parse(bRCurrency);
+		JSONArray arrayCurrency = (JSONArray) jTCurrency;
+		System.out.println(CurrencieURL);
+		//System.out.println(jsonarray);
+	}
 
 	public static String age(long age) {
 		double realage = age /= 60;
 		double hours = realage/60;
-		String ageString = realage + " Minuten = " + hours + " Stunden";
+		DecimalFormat df = new DecimalFormat();
+		df.setRoundingMode(RoundingMode.DOWN);
+		String roundedhours = df.format(hours);
+		String ageString = realage + " Minuten = " + roundedhours + " Stunden";
 		return ageString;
 	}
 	

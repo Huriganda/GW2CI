@@ -88,7 +88,7 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 * 
 	 * @throws IOException
-	 * @throws ParseException 
+	 * @throws ParseException
 	 */
 	public Main() throws IOException, ParseException {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/images/GuildWars2.PNG")));
@@ -108,8 +108,7 @@ public class Main extends JFrame {
 				System.exit(1);
 			}
 		});
-		mntmSchlieen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4,
-				InputEvent.ALT_MASK));
+		mntmSchlieen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, InputEvent.ALT_MASK));
 		mnDatei.add(mntmSchlieen);
 
 		JMenu mnInfo = new JMenu("Info");
@@ -123,8 +122,7 @@ public class Main extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		tF_APIToken = new JTextField(
-				"A3F25477-8650-BB4B-BC4C-A72DF768B876A4D5E804-779F-4843-9E15-1028996B6CE5");
+		tF_APIToken = new JTextField("A3F25477-8650-BB4B-BC4C-A72DF768B876A4D5E804-779F-4843-9E15-1028996B6CE5");
 		tF_APIToken.setToolTipText("Hier API-Token einfügen");
 		tF_APIToken.setBounds(112, 16, 385, 26);
 		contentPane.add(tF_APIToken);
@@ -150,8 +148,7 @@ public class Main extends JFrame {
 		lblKopf.setBounds(15, 98, 69, 20);
 		contentPane.add(lblKopf);
 
-		lbl_KopfIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
+		lbl_KopfIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
 		lbl_KopfIcon.setLabelFor(lblKopf);
 		lbl_KopfIcon.setBounds(112, 76, 64, 64);
 		lbl_KopfIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
@@ -161,10 +158,8 @@ public class Main extends JFrame {
 		lblSchulter.setBounds(15, 178, 69, 20);
 		contentPane.add(lblSchulter);
 
-		lbl_SchulterIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_SchulterIcon.setBorder(BorderFactory.createLineBorder(Color.black,
-				1));
+		lbl_SchulterIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_SchulterIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_SchulterIcon.setBounds(112, 156, 64, 64);
 		contentPane.add(lbl_SchulterIcon);
 
@@ -172,21 +167,17 @@ public class Main extends JFrame {
 		lblHandschuhe.setBounds(15, 257, 98, 20);
 		contentPane.add(lblHandschuhe);
 
-		lbl_HandschuhIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_HandschuhIcon.setBorder(BorderFactory.createLineBorder(Color.black,
-				1));
+		lbl_HandschuhIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_HandschuhIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_HandschuhIcon.setBounds(112, 236, 64, 64);
 		contentPane.add(lbl_HandschuhIcon);
 
-		lbl_BrustIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
+		lbl_BrustIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
 		lbl_BrustIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_BrustIcon.setBounds(112, 316, 64, 64);
 		contentPane.add(lbl_BrustIcon);
 
-		lbl_SchuhIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
+		lbl_SchuhIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
 		lbl_SchuhIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_SchuhIcon.setBounds(112, 476, 64, 64);
 		contentPane.add(lbl_SchuhIcon);
@@ -203,31 +194,23 @@ public class Main extends JFrame {
 		lblSchuhe.setBounds(15, 498, 69, 20);
 		contentPane.add(lblSchuhe);
 
-		lbl_Waffe1AIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_Waffe1AIcon.setBorder(BorderFactory
-				.createLineBorder(Color.black, 1));
+		lbl_Waffe1AIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_Waffe1AIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Waffe1AIcon.setBounds(112, 556, 64, 64);
 		contentPane.add(lbl_Waffe1AIcon);
 
-		lbl_Waffe1BIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_Waffe1BIcon.setBorder(BorderFactory
-				.createLineBorder(Color.black, 1));
+		lbl_Waffe1BIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_Waffe1BIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Waffe1BIcon.setBounds(112, 716, 64, 64);
 		contentPane.add(lbl_Waffe1BIcon);
 
-		lbl_Waffe2AIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_Waffe2AIcon.setBorder(BorderFactory
-				.createLineBorder(Color.black, 1));
+		lbl_Waffe2AIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_Waffe2AIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Waffe2AIcon.setBounds(112, 636, 64, 64);
 		contentPane.add(lbl_Waffe2AIcon);
 
-		lbl_Waffe2BIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_Waffe2BIcon.setBorder(BorderFactory
-				.createLineBorder(Color.black, 1));
+		lbl_Waffe2BIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_Waffe2BIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Waffe2BIcon.setBounds(112, 796, 64, 64);
 		contentPane.add(lbl_Waffe2BIcon);
 
@@ -247,71 +230,53 @@ public class Main extends JFrame {
 		lblWaffeb_1.setBounds(15, 818, 82, 20);
 		contentPane.add(lblWaffeb_1);
 
-		lbl_RueckenIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_RueckenIcon.setBorder(BorderFactory
-				.createLineBorder(Color.black, 1));
+		lbl_RueckenIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_RueckenIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_RueckenIcon.setBounds(786, 76, 64, 64);
 		contentPane.add(lbl_RueckenIcon);
 
-		lbl_Ohrring1Icon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_Ohrring1Icon.setBorder(BorderFactory.createLineBorder(Color.black,
-				1));
+		lbl_Ohrring1Icon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_Ohrring1Icon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Ohrring1Icon.setBounds(786, 156, 64, 64);
 		contentPane.add(lbl_Ohrring1Icon);
 
-		lbl_Ohrring2Icon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_Ohrring2Icon.setBorder(BorderFactory.createLineBorder(Color.black,
-				1));
+		lbl_Ohrring2Icon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_Ohrring2Icon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Ohrring2Icon.setBounds(786, 235, 64, 64);
 		contentPane.add(lbl_Ohrring2Icon);
 
-		lbl_AmulettIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_AmulettIcon.setBorder(BorderFactory
-				.createLineBorder(Color.black, 1));
+		lbl_AmulettIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_AmulettIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_AmulettIcon.setBounds(786, 316, 64, 64);
 		contentPane.add(lbl_AmulettIcon);
 
-		lbl_Ring1Icon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
+		lbl_Ring1Icon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
 		lbl_Ring1Icon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Ring1Icon.setBounds(786, 396, 64, 64);
 		contentPane.add(lbl_Ring1Icon);
 
-		lbl_Ring2Icon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
+		lbl_Ring2Icon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
 		lbl_Ring2Icon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Ring2Icon.setBounds(786, 476, 64, 64);
 		contentPane.add(lbl_Ring2Icon);
 
-		lbl_ErntesichelIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_ErntesichelIcon.setBorder(BorderFactory.createLineBorder(
-				Color.black, 1));
+		lbl_ErntesichelIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_ErntesichelIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_ErntesichelIcon.setBounds(786, 556, 64, 64);
 		contentPane.add(lbl_ErntesichelIcon);
 
-		lbl_HolzaxtIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_HolzaxtIcon.setBorder(BorderFactory
-				.createLineBorder(Color.black, 1));
+		lbl_HolzaxtIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_HolzaxtIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_HolzaxtIcon.setBounds(786, 636, 64, 64);
 		contentPane.add(lbl_HolzaxtIcon);
 
-		lbl_SpitzhackeIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_SpitzhackeIcon.setBorder(BorderFactory.createLineBorder(
-				Color.black, 1));
+		lbl_SpitzhackeIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_SpitzhackeIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_SpitzhackeIcon.setBounds(786, 716, 64, 64);
 		contentPane.add(lbl_SpitzhackeIcon);
 
-		lbl_Unterwasserwaffe1Icon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_Unterwasserwaffe1Icon.setBorder(BorderFactory.createLineBorder(
-				Color.black, 1));
+		lbl_Unterwasserwaffe1Icon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_Unterwasserwaffe1Icon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Unterwasserwaffe1Icon.setBounds(786, 796, 64, 64);
 		contentPane.add(lbl_Unterwasserwaffe1Icon);
 
@@ -351,17 +316,13 @@ public class Main extends JFrame {
 		lblRing_1.setBounds(621, 498, 69, 20);
 		contentPane.add(lblRing_1);
 
-		lbl_Unterwasserwaffe2Icon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_Unterwasserwaffe2Icon.setBorder(BorderFactory.createLineBorder(
-				Color.black, 1));
+		lbl_Unterwasserwaffe2Icon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_Unterwasserwaffe2Icon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_Unterwasserwaffe2Icon.setBounds(786, 876, 64, 64);
 		contentPane.add(lbl_Unterwasserwaffe2Icon);
 
-		lbl_AtemmaskeIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
-		lbl_AtemmaskeIcon.setBorder(BorderFactory.createLineBorder(Color.black,
-				1));
+		lbl_AtemmaskeIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
+		lbl_AtemmaskeIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		lbl_AtemmaskeIcon.setBounds(112, 876, 64, 64);
 		contentPane.add(lbl_AtemmaskeIcon);
 
@@ -382,37 +343,48 @@ public class Main extends JFrame {
 		textPane.setEditable(false);
 
 		textPane.setBounds(219, 220, 362, 160);
-		textPane.setBorder(BorderFactory.createLineBorder(Color.black,
-				1));
+		textPane.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		contentPane.add(textPane);
 
 		lbl_HoseIcon.setBounds(112, 396, 64, 64);
 		contentPane.add(lbl_HoseIcon);
-		lbl_HoseIcon.setIcon(new ImageIcon(Main.class
-				.getResource("/images/nothing.png")));
+		lbl_HoseIcon.setIcon(new ImageIcon(Main.class.getResource("/images/nothing.png")));
 		lbl_HoseIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
-		
+
 		tP_ItemInfo.setEditable(false);
 		tP_ItemInfo.setBounds(219, 418, 362, 442);
-		tP_ItemInfo.setBorder(BorderFactory.createLineBorder(Color.black,
-				1));
+		tP_ItemInfo.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		contentPane.add(tP_ItemInfo);
-		
+
+		JButton btnWallet = new JButton("Geldbörse");
+		btnWallet.setEnabled(false);
+		btnWallet.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new wallet().setVisible(true);
+			}
+		});
+		btnWallet.setBounds(219, 97, 128, 23);
+		contentPane.add(btnWallet);
+
 		Connection conn = new Connection();
 
 		btnAbsenden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String APIAcessToken = tF_APIToken.getText();
-				try {
-					
-					if (conn.isAlreadyIn() == false) {
-						conn.getCharNames(APIAcessToken);
-						JOptionPane.showMessageDialog(contentPane, "Charaktere erfolgreich importiert!");
-					} else {
-						JOptionPane.showMessageDialog(contentPane, "Charaktere bereits importiert!","Warnung", JOptionPane.WARNING_MESSAGE);
+				if (!(tF_APIToken.equals(""))) {
+					btnWallet.setEnabled(true);
+					String APIAcessToken = tF_APIToken.getText();
+					try {
+
+						if (conn.isAlreadyIn() == false) {
+							conn.getCharNames(APIAcessToken);
+							JOptionPane.showMessageDialog(contentPane, "Charaktere erfolgreich importiert!");
+						} else {
+							JOptionPane.showMessageDialog(contentPane, "Charaktere bereits importiert!", "Warnung",
+									JOptionPane.WARNING_MESSAGE);
+						}
+					} catch (IOException | ParseException e) {
+						e.printStackTrace();
 					}
-				} catch (IOException | ParseException e) {
-					e.printStackTrace();
 				}
 			}
 		});
