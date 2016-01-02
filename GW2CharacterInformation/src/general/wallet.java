@@ -21,21 +21,6 @@ public class wallet extends JFrame {
 	static JList list = new JList();
 	static DefaultListModel listModel = new DefaultListModel();
 
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					wallet frame = new wallet();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
 
 	/**
 	 * Create the frame.
