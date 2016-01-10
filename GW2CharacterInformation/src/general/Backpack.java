@@ -21,6 +21,7 @@ import org.json.simple.parser.ParseException;
 public class Backpack extends Items {
 
 	private static Object jsonText;
+	static String URL;
 
 	Backpack() throws MalformedURLException, IOException {
 		super();
@@ -32,7 +33,12 @@ public class Backpack extends Items {
 			IOException, ParseException {
 		// TODO Auto-generated method stub
 		JSONParser parser = new JSONParser();
-		String URL = "https://api.guildwars2.com/v2/items/" + id + "?lang=de";
+		if (Connection.array[1][5] == null){
+			URL = "https://api.guildwars2.com/v2/items/" + id + "?lang=de";
+		} else {
+			URL = "https://api.guildwars2.com/v2/skins/" + Connection.array[1][5].toString() + "?lang=de";
+			System.out.println(URL);
+		}
 		InputStream inputStream = new URL(URL).openStream();
 		BufferedReader br = new BufferedReader(new InputStreamReader(
 				inputStream, Charset.forName("UTF-8")));
@@ -72,7 +78,26 @@ public class Backpack extends Items {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
+				URL = "https://api.guildwars2.com/v2/items/" + id + "?lang=de";
+				InputStream inputStream = null;
+				try {
+					inputStream = new URL(URL).openStream();
+					BufferedReader br = new BufferedReader(new InputStreamReader(
+							inputStream, Charset.forName("UTF-8")));
+
+					setJsonText(parser.parse(br));
+				} catch (IOException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 				Items.write((JSONObject) getJsonText());
+				try {
+					inputStream.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 	}

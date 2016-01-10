@@ -365,6 +365,10 @@ public class Main extends JFrame {
 		});
 		btnWallet.setBounds(219, 97, 128, 23);
 		contentPane.add(btnWallet);
+		
+		/*if (wallet.EXIT_ON_CLOSE == 1){
+			wallet.listModel.clear();
+		}*/
 
 		Connection conn = new Connection();
 

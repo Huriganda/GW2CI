@@ -3,6 +3,7 @@ package general;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -20,6 +21,7 @@ public abstract class Items {
 	static JSONParser parser = new JSONParser();
 	static String URL;
 	static long id;
+	static String flagstring = null;
 	// static InputStream inputStream;
 	// static BufferedReader br;
 	static Object jsonText;
@@ -33,6 +35,7 @@ public abstract class Items {
 
 	public static void write(JSONObject jsonObject) {
 		// JSONObject jsonObject = (JSONObject) Helmet.getJsonText();
+		flagstring = null;
 		name = (String) jsonObject.get("name");
 		description = (String) jsonObject.get("description");
 		type = (String) jsonObject.get("type");
@@ -43,10 +46,50 @@ public abstract class Items {
 		chat_link = (String) jsonObject.get("chat_link");
 		id = (long) jsonObject.get("id");
 		String idString = String.valueOf(id); 
+		JSONArray jsonarray = (JSONArray) jsonObject.get("flags");
+		String[] flags = new String[jsonarray.size()];
+		for (int i = 0; i < flags.length; i++){
+			flagstring = flagstring + jsonarray.get(i) + ", ";
+		}
+		
+		flagstring = flagstring.substring(4);
+		
+		
+		if (rarity.equals("Junk")){
+			rarity = "Schrott";
+		}
+		
+		if (rarity.equals("Basic")){
+			rarity ="Einfach";
+		}
+		
+		if (rarity.equals("Fine")){
+			rarity="Edel";
+		}
+		
+		if (rarity.equals("Masterwork")){
+			rarity="Meisterwerk";
+		}
+		
+		if (rarity.equals("Rare")){
+			rarity="Selten";
+		}
+		
+		if (rarity.equals("Exotic")){
+			rarity="Exotisch";
+		}
+		
+		if (rarity.equals("Ascended")){
+			rarity="Aufgestiegen";
+		}
+		
+		if (rarity.equals("Legendary")){
+			rarity="Legendär";
+		}
 
 		String AllTogether = "Name: " + name + "\nBeschreibung: " + description
 				+ "\nTyp: " + type + "\nLevel: " + level + "\nRarität: "
-				+ rarity + "\nWert: " + value + "\nChat Link: " + chat_link + "\nID: " + idString;
+				+ rarity + "\nWert: " + value + "\nChat Link: " + chat_link + "\nID: " + idString + "\nFlags:" + flagstring;
 		Main.tP_ItemInfo.setText(AllTogether);
 	}
 
